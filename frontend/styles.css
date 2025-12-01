@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-section, .output-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #555;
+    margin: 15px 0 10px 0;
+}
+
+/* Strategy Selector */
+.strategy-selector {
+    margin-bottom: 20px;
+}
+
+.strategy-selector label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.strategy-selector select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Form Styles */
+.form-section input, .json-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.json-section textarea {
+    min-height: 100px;
+    font-family: 'Courier New', monospace;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #5568d3;
+}
+
+.analyze-btn {
+    width: 100%;
+    margin-top: 20px;
+    background: #764ba2;
+    font-size: 1.1em;
+    padding: 15px;
+}
+
+.analyze-btn:hover {
+    background: #653a8a;
+}
+
+/* Task List */
+.current-tasks {
+    margin: 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.task-item {
+    background: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item button {
+    background: #e74c3c;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Results */
+.result-card {
+    background: #f9f9f9;
+    border-left: 5px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.result-card:hover {
+    transform: translateX(5px);
+}
+
+.result-card.high {
+    border-left-color: #e74c3c;
+    background: #ffebee;
+}
+
+.result-card.medium {
+    border-left-color: #f39c12;
+    background: #fff8e1;
+}
+
+.result-card.low {
+    border-left-color: #27ae60;
+    background: #e8f5e9;
+}
+
+.result-card h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.score-badge {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.priority-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.priority-badge.HIGH {
+    background: #e74c3c;
+    color: white;
+}
+
+.priority-badge.MEDIUM {
+    background: #f39c12;
+    color: white;
+}
+
+.priority-badge.LOW {
+    background: #27ae60;
+    color: white;
+}
+
+.task-details {
+    margin: 10px 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.explanation {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Loading and Error */
+.loading, .error {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loading {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.error {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}

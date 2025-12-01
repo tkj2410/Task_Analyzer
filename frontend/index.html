@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Smart Task Analyzer</h1>
+            <p>Intelligently prioritize your tasks</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <h2>Add Tasks</h2>
+                
+                <!-- Strategy Selector -->
+                <div class="strategy-selector">
+                    <label for="strategy">Sorting Strategy:</label>
+                    <select id="strategy">
+                        <option value="smart">Smart Balance</option>
+                        <option value="fastest">Fastest Wins</option>
+                        <option value="impact">High Impact</option>
+                        <option value="deadline">Deadline Driven</option>
+                    </select>
+                </div>
+
+                <!-- Manual Form -->
+                <div class="form-section">
+                    <h3>Add Individual Task</h3>
+                    <form id="taskForm">
+                        <input type="text" id="title" placeholder="Task Title" required>
+                        <input type="date" id="dueDate" required>
+                        <input type="number" id="hours" placeholder="Estimated Hours" min="1" required>
+                        <input type="number" id="importance" placeholder="Importance (1-10)" min="1" max="10" required>
+                        <button type="submit">Add Task</button>
+                    </form>
+                </div>
+
+                <!-- Bulk JSON Input -->
+                <div class="json-section">
+                    <h3>Or Paste JSON</h3>
+                    <textarea id="jsonInput" placeholder='[{"title": "Fix bug", "due_date": "2025-12-05", "estimated_hours": 3, "importance": 8, "dependencies": []}]'></textarea>
+                    <button id="loadJson">Load from JSON</button>
+                </div>
+
+                <!-- Current Tasks -->
+                <div class="current-tasks">
+                    <h3>Current Tasks (<span id="taskCount">0</span>)</h3>
+                    <div id="taskList"></div>
+                </div>
+
+                <button id="analyzeBtn" class="analyze-btn">Analyze Tasks</button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <h2>Prioritized Tasks</h2>
+                <div id="loading" class="loading hidden">Analyzing tasks...</div>
+                <div id="error" class="error hidden"></div>
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
